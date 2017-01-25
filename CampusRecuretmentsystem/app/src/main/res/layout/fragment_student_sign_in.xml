@@ -1,0 +1,53 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.example.babarmustafa.campusrecuretmentsystem.StudentSign_in"
+   >
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:id="@+id/e_email"
+        android:hint="Email"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+       />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="5dip"
+        android:layout_marginTop="10dp"
+        android:id="@+id/e_pass"
+        android:hint="Password"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+       />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+       android:text="Login"
+        android:background="@color/colorAccent"
+        android:id="@+id/login_buttobn"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/colorAccent"
+        android:text="NO Account Yet? Want to Create"
+        android:id="@+id/singup_calling_button"/>
+
+
+    />
+
+</LinearLayout>

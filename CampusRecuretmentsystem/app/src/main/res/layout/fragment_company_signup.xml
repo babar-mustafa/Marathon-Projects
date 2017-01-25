@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.babarmustafa.campusrecuretmentsystem.Company_signup"
+    android:background="@color/colorPrimaryDark">
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Compony name"
+        android:id="@+id/for_compony_name"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Compony Email"
+        android:id="@+id/for_compony_email"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Compony WebSite"
+        android:id="@+id/for_compony_website"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Password"
+        android:id="@+id/for_compony_password"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:id="@+id/for_compony_password_confirm"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        />
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        android:id="@+id/for_compony_signup"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:background="@color/colorAccent"/>
+
+
+
+</LinearLayout>

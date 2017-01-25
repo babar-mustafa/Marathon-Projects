@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "18185690555",
+    "firebase_url": "https://campus-recuretment-system.firebaseio.com",
+    "project_id": "campus-recuretment-system",
+    "storage_bucket": "campus-recuretment-system.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18185690555:android:a63e9dc153aae57e",
+        "android_client_info": {
+          "package_name": "com.example.babarmustafa.campusrecuretmentsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18185690555-g4pqc1kf7tdmirc11arc76e5tj8dbqev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGCyutWFCGLZZxqHb_NQDzlJ4XmisS-s8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
