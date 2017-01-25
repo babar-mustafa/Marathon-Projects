@@ -24,6 +24,8 @@ public class Details_of_Student_for_Compony extends Fragment {
     private ArrayList<Student_info> messages;
     private Student_show_Adapter listAdapter;
     Student_info data;
+    ArrayList<String> get_uid_of_student;
+
 
     public Details_of_Student_for_Compony() {
         // Required empty public constructor
@@ -48,6 +50,7 @@ public class Details_of_Student_for_Compony extends Fragment {
                     @Override
                     public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                         data = dataSnapshot.getValue(Student_info.class);
+                        get_uid_of_student.add(data.getUID());
                         Student_info info = new Student_info(data.getUID(),data.getName(),data.getEmail(),data.getPassword(),data.getGEnder());
                         messages.add(info);
                         listAdapter.notifyDataSetChanged();
@@ -73,6 +76,7 @@ public class Details_of_Student_for_Compony extends Fragment {
 
                     }
                 });
+        
         return  view;
     }
 
