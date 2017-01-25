@@ -93,8 +93,8 @@ public class StudentSign_in extends Fragment {
                                 } else {
                                     progres.dismiss();
                                     Toast.makeText(getActivity(), "You Are now A register", Toast.LENGTH_SHORT).show();
-//                                    Intent call = new Intent(getActivity(), Chat_Main_View.class);
-//                                    startActivity(call);
+                                    Intent call = new Intent(getActivity(), Welcome_For_Student.class);
+                                    startActivity(call);
                                 }
 
                             }
@@ -114,5 +114,6 @@ public class StudentSign_in extends Fragment {
         });
         return view;
     }
+
 
 }

@@ -2,6 +2,7 @@ package com.example.babarmustafa.campusrecuretmentsystem;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -91,8 +92,8 @@ public class Company_signin extends Fragment {
                                 } else {
                                     progres.dismiss();
                                     Toast.makeText(getActivity(), "You Are now A register As a Compony", Toast.LENGTH_SHORT).show();
-//                                    Intent call = new Intent(getActivity(), Chat_Main_View.class);
-//                                    startActivity(call);
+                                    Intent call = new Intent(getActivity(), Welcome_Company.class);
+                                    startActivity(call);
                                 }
 
                             }
