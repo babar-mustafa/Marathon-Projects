@@ -17,8 +17,7 @@ import java.util.ArrayList;
  * Created by BabarMustafa on 1/25/2017.
  */
 
-//public class Student_show_Adapter {
-//}
+
 
 public class  Student_show_Adapter extends BaseAdapter {
 

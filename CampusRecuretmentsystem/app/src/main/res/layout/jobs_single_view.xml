@@ -6,10 +6,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:id="@+id/to_disple_name_of_c"/>
+        android:id="@+id/to_disple_name_of_c"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:id="@+id/to_disple_job_of_c"/>
+        android:id="@+id/to_disple_job_of_c"
+        android:textColor="@color/colorAccent"/>
 
 </LinearLayout>

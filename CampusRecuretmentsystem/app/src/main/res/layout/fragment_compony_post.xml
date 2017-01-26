@@ -3,17 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.babarmustafa.campusrecuretmentsystem.ComponyPost"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:id="@+id/job_description"/>
+        android:id="@+id/job_description"
+        android:textColor="@color/colorAccent"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="po_Description"
-        android:id="@+id/compony_post"/>
+        android:id="@+id/compony_post"
+        android:textColor="@color/colorAccent"/>
 
     <ListView
         android:id="@+id/list_view_for_ccurrent_compony_jobs"

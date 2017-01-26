@@ -1,15 +1,40 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.babarmustafa.campusrecuretmentsystem.Admin"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
 
     >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="admin" />
-
-</FrameLayout>
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:id="@+id/a_email"
+        android:hint="Email"
+        android:text="babar_admin@gmail.com"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="5dip"
+        android:layout_marginTop="10dp"
+        android:id="@+id/a_pass"
+        android:hint="Password"
+        android:text="aaaa"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Login"
+        android:background="@color/colorAccent"
+        android:id="@+id/a_buttobn"
+        />
+</LinearLayout>

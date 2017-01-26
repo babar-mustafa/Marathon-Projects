@@ -15,9 +15,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 /**
@@ -33,7 +40,8 @@ public class StudentSign_in extends Fragment {
     String usernameforlogin;
     String passwordforlogin;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private FirebaseAuth mAuth;
+
+    DatabaseReference databse;
 
 
     public StudentSign_in() {
@@ -46,6 +54,7 @@ public class StudentSign_in extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
    View view =  inflater.inflate(R.layout.fragment_student_sign_in, container, false);
+        databse = FirebaseDatabase.getInstance().getReference();
         s_email = (EditText) view.findViewById(R.id.e_email);
         s_passs = (EditText) view.findViewById(R.id.e_pass);
         for_sigin_in = (Button) view.findViewById(R.id.login_buttobn);
@@ -66,9 +75,9 @@ public class StudentSign_in extends Fragment {
                     return;
                 }
 
-//                else if (s_passs.getText().toString().length() > 6) {
+//                else if (a_pas.getText().toString().length() > 6) {
 //                    Toast.makeText(MainActivity.this, "Password Must be 6 digits or more than 6 ", Toast.LENGTH_LONG).show();
-//                    s_passs.setError("Enter The password ");
+//                    a_pas.setError("Enter The password ");
 //                    return;
 //                }
                 else if (s_passs.getText().toString().length() == 0) {
@@ -84,21 +93,48 @@ public class StudentSign_in extends Fragment {
                         .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
 
-                                if (!task.isSuccessful()) {
+                                    FirebaseUser user = task.getResult().getUser();
+                                    String Uid = user.getUid();
+                                    databse
+                                            .child("Student_info")
+                                            .child(Uid)
+                                            .addValueEventListener(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                                    Student_info s_info = dataSnapshot.getValue(Student_info.class);
+                                                    if(s_info != null){
+                                                        Intent call = new Intent(getActivity(), Welcome_For_Student.class);
+                                                        startActivity(call);
+                                                    }
+                                                    else{
+                                                        Toast.makeText(getActivity(), "user not Found", Toast.LENGTH_SHORT).show();
 
-                                    // there was an error
-                                    Toast.makeText(getActivity(), "UserName or Password is in correct", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                }
 
-                                } else {
-                                    progres.dismiss();
-                                    Toast.makeText(getActivity(), "You Are now A register", Toast.LENGTH_SHORT).show();
-                                    Intent call = new Intent(getActivity(), Welcome_For_Student.class);
-                                    startActivity(call);
+                                                @Override
+                                                public void onCancelled(DatabaseError databaseError) {
+                                                    Toast.makeText(getActivity(), "yo are Not student", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+
+
                                 }
 
+
                             }
-                        });
+
+                        }
+                        )
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getActivity(), "Authentication Failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
             }
         });
 

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.babarmustafa.campusrecuretmentsystem.Details_of_Student_for_Compony">
+    tools:context="com.example.babarmustafa.campusrecuretmentsystem.Details_of_Student_for_Compony"
+    android:background="@color/colorPrimaryDark">
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"

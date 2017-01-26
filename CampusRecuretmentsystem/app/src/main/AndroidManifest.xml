@@ -16,7 +16,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Welcome_For_Student" />
-        <activity android:name=".Welcome_Company"></activity>
+        <activity android:name=".Welcome_Company" />
+        <activity android:name=".Compony_Profile_show" />
+        <activity android:name=".Studen_Profile_Show" />
+        <activity android:name=".Welcome_Admin"></activity>
     </application>
 
 </manifest>
