@@ -1,13 +1,25 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.babarmustafa.campusrecuretmentsystem.ComponyPost">
+    tools:context="com.example.babarmustafa.campusrecuretmentsystem.ComponyPost"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="200dp"
+        android:id="@+id/job_description"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="po_Description"
+        android:id="@+id/compony_post"/>
 
-</FrameLayout>
+    <ListView
+        android:id="@+id/list_view_for_ccurrent_compony_jobs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+
+
+</LinearLayout>

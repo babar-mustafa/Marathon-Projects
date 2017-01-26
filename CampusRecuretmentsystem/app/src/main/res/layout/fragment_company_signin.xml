@@ -12,6 +12,7 @@
         android:padding="5dp"
         android:id="@+id/e_c_email"
         android:hint="Email"
+        android:text="panacloud@g.com"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         />
@@ -22,6 +23,7 @@
         android:layout_marginTop="10dp"
         android:id="@+id/e_c_pass"
         android:hint="Password"
+        android:text="1234567"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         />
