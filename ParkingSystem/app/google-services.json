@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "779373429327",
+    "firebase_url": "https://parking-system-28a8b.firebaseio.com",
+    "project_id": "parking-system-28a8b",
+    "storage_bucket": "parking-system-28a8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779373429327:android:ead5b6fc53b70c90",
+        "android_client_info": {
+          "package_name": "com.example.babarmustafa.parkingsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779373429327-jm9rv7hk3o3lqcubv6pqeubqhqahg5bt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhrsNSzjt3GRJUcnuga4BEznMAOeib37U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

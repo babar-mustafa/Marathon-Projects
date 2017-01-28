@@ -80,4 +80,6 @@ public class Compony_Info {
     public void setC_Profile_image(String c_Profile_image) {
         this.c_Profile_image = c_Profile_image;
     }
+
+
 }

@@ -30,6 +30,7 @@ public class ComponyNAme_to_Students extends Fragment {
     public static String c_name;
     String pId;
     ArrayList<String> list;
+
     public ComponyNAme_to_Students() {
         // Required empty public constructor
     }
@@ -38,7 +39,7 @@ public class ComponyNAme_to_Students extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragmentlist.a
         View view =  inflater.inflate(R.layout.fragment_compony_name, container, false);
         list = new ArrayList<>();
 
