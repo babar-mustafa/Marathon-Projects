@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "69426770815",
+    "firebase_url": "https://auction-system-81600.firebaseio.com",
+    "project_id": "auction-system-81600",
+    "storage_bucket": "auction-system-81600.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69426770815:android:1b3e80586a83d0fa",
+        "android_client_info": {
+          "package_name": "com.example.babarmustafa.auctionsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69426770815-0r8o171ge4kacee992oesedhl47rnulu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRoB_j803dJ41Ob07coPO_VJT1HqafvuM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

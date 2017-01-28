@@ -14,7 +14,7 @@ import com.example.babarmustafa.parkingsystem.Fragemnts_for_user.Usser_Booked;
 
 import java.util.ArrayList;
 
-public class Welcome_for_User extends AppCompatActivity {
+public class Welcome_for_User extends BaseActivity {
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
     private TabAdapter adapter;
