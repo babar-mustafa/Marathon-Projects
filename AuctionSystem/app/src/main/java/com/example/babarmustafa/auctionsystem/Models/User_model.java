@@ -17,6 +17,10 @@ public class User_model {
     public User_model() {
     }
 
+    public User_model(String name) {
+        Name = name;
+    }
+
     public User_model(String UID, String name, String email, String country, String city, String password, String GEnder) {
         this.UID = UID;
         Name = name;

@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import com.example.babarmustafa.auctionsystem.Adapters.ToMoAdapter;
 import com.example.babarmustafa.auctionsystem.Details_Activity;
 import com.example.babarmustafa.auctionsystem.Models.Data_Mobiles;
 import com.example.babarmustafa.auctionsystem.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,26 +32,38 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Laptops extends Fragment {
-    private ListView emailList;
+    private FirebaseAuth mAuth;
+
+    private GridView emailList;
     String key;
     private List<Data_Mobiles> messages;
     private ToMoAdapter listAdapter;
-    EditText editText, editText2;
+    EditText editText, editText2,start_bid;
     Button btn;
     ArrayList<String> list;
     public HashMap<String, String> hashObj = new HashMap<>();
     DatabaseReference database;
     String product_name;
     String product_city;
+    String product_id;
+    String push_is;
+    String product_p;
+    String product_ni;
+   public static String current_user_name;
+    public static String current_user_email;
+    public static String current_user_city;
+    public static String Login_user;
 
     public Laptops() {
         // Required empty public constructor
     }
+
 
 
     @Override
@@ -57,28 +71,67 @@ public class Laptops extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View ciew = inflater.inflate(R.layout.fragment_laptops, container, false);
+
+        mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance().getReference();
+        Login_user = mAuth.getCurrentUser().getUid();
         list = new ArrayList<>();
         editText = (EditText) ciew.findViewById(R.id.edit_text);
         editText2 = (EditText) ciew.findViewById(R.id.edit_text2);
+        start_bid = (EditText) ciew.findViewById(R.id.bid_u);
+
         btn = (Button) ciew.findViewById(R.id.button_add);
 
 
-        emailList = (ListView) ciew.findViewById(R.id.email_List);
+        database
+                .child("User_info")
+                .child(Login_user)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        Map<String, String> map = (Map)dataSnapshot.getValue();
+                        current_user_name =map.get("Name");
+                        current_user_email =map.get("Email");
+                        current_user_city =map.get("City");
+                        Toast.makeText(getActivity(), "n>"+current_user_name, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "e>"+current_user_email, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "c>"+current_user_city, Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+        emailList = (GridView) ciew.findViewById(R.id.email_List);
         messages = new ArrayList<>();
 
         listAdapter = new ToMoAdapter(messages, getActivity());
         emailList.setAdapter(listAdapter);
+
         emailList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, final long id) {
-list.get(position);
+            list.get(position);
               product_name =   messages.get(position).getName_products();
                product_city =  messages.get(position).getP_city();
+                product_id =  messages.get(position).getP_id();
+                product_p =  messages.get(position).getS_price();
+
+
                 Intent hsasjhd =new Intent(getActivity(), Details_Activity.class);
-                startActivity(hsasjhd);
                 hsasjhd.putExtra("p_of_name",product_name);
                 hsasjhd.putExtra("p_of_city",product_city);
+                hsasjhd.putExtra("p_of_id",product_id);
+                hsasjhd.putExtra("s_price",product_p);
+//                hsasjhd.putExtra("provider_name",c);
+//                hsasjhd.putExtra("p_email",product_p);
+
+
+                startActivity(hsasjhd);
+
+
 
                 return true;
             }
@@ -94,20 +147,32 @@ list.get(position);
 
         // myRef.setValue("Hello Babar");
         // Read from the database
-
+       //final String push_is= database.push().getKey().toString();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                push_is = database.push().getKey();
                 String text = editText.getText().toString();
                 String city = editText2.getText().toString();
-                Data_Mobiles data = new Data_Mobiles(text,city,database.child("Data").push().getKey().toString());
+                String starting_price = start_bid.getText().toString();
+                Data_Mobiles data = new Data_Mobiles(text,city,push_is,starting_price,current_user_name,current_user_email);
+
                 hashObj.put("p_id", data.getP_id());
                 hashObj.put("name_products", data.getName_products());
                 hashObj.put("p_city", data.getP_city());
+                hashObj.put("s_price", data.getS_price());
+                hashObj.put("person_name", data.getPerson_name());
+                hashObj.put("person_email", data.getPerson_email());
+
+
+
+//                hashObj.put("p_p_name", data.getP_p_name());
+
+
 
                 database
                         .child("Mbiles_Data")
-                        .child(database.child("Data").push().getKey().toString())
+                        .child(push_is)
                         .setValue(hashObj);
 //                SetValuetoFireBase();
 
@@ -124,9 +189,9 @@ list.get(position);
                 // whenever Data at this location is updated.
                 Data_Mobiles data = dataSnapshot.getValue(Data_Mobiles.class);
 
-                list.add(data.getName_products());
-                list.add(data.getP_city());
-                messages.add(new Data_Mobiles(data.getName_products(),data.getP_city(),data.getP_id()));
+                list.add(data.getP_id());
+//                list.add(data.getP_city());
+                messages.add(new Data_Mobiles(data.getName_products(),data.getP_city(),data.getP_id(),data.getS_price()));
                 listAdapter.notifyDataSetChanged();
 
 

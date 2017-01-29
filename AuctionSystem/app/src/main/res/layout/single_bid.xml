@@ -3,28 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Name"
-        android:id="@+id/nameview"
+        android:textStyle="bold"
+        android:id="@+id/bidiew"
         android:textSize="25dp"
         android:layout_marginLeft="5dp"/>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Message"
-        android:id="@+id/cityview"
-        android:textSize="15dp"
-        android:layout_marginLeft="5dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Message"
-        android:id="@+id/pcityview"
-        android:textSize="15dp"
-        android:layout_marginLeft="5dp"/>
+        android:text="Bid amount"
+        android:id="@+id/bidview"
+        android:textSize="25dp"
+        android:layout_marginLeft="85dp"/>
+</LinearLayout>
 
 </LinearLayout>

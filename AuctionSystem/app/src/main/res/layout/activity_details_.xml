@@ -4,15 +4,88 @@
     android:id="@+id/activity_details_"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-  android:orientation="vertical"
+    android:orientation="vertical"
     tools:context="com.example.babarmustafa.auctionsystem.Details_Activity">
 
-    <TextView
+
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/name_i"/>
-    <TextView
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:id="@+id/name_oo"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/name_cioo"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name_i"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name_ci"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name_ciiii"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/email_Lis"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        >
+
+    </ListView>
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_send_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/name_cii"/>
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/bid_amount_user"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="5"
+            android:gravity="top|left"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLines="5"
+            android:minLines="3"
+            android:scrollHorizontally="false" />
+
+        <Button
+            android:id="@+id/bid_button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+
+            android:gravity="center"
+            android:text="send"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+

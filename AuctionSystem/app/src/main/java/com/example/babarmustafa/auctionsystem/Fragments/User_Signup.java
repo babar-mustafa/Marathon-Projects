@@ -127,7 +127,7 @@ public class User_Signup extends Fragment {
 
                                     String id = mAuth.getCurrentUser().getUid();
 
-                                    user = new User_model(id, get_name_of_student, get_email_of_student, get_pass_of_student,to_get_gender,get_country_of_student,get_city_of_student);
+                                    user = new User_model(id, get_name_of_student, get_email_of_student,get_country_of_student,get_city_of_student, get_pass_of_student,to_get_gender);
 
 
                                     hashObj.put("UID", user.getUID());

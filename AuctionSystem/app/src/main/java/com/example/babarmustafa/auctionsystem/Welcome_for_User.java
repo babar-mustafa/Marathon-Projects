@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.babarmustafa.auctionsystem.Adapters.TabsAdapter;
 import com.example.babarmustafa.auctionsystem.Fragments.Laptops;
+import com.example.babarmustafa.auctionsystem.Fragments.Members;
 import com.example.babarmustafa.auctionsystem.Fragments.Mobiles;
 import com.example.babarmustafa.auctionsystem.Fragments.User_Signup;
 
@@ -20,12 +21,14 @@ public class Welcome_for_User extends AppCompatActivity {
     private ArrayList<Fragment> FragmentArrayList_for_compony;
     private Laptops tab1;
     private Mobiles tab2;
+    private Members tab3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_for__user);
         tab1 = new Laptops();
         tab2 = new Mobiles();
+        tab3= new Members();
 
 
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout_to_u);
@@ -36,10 +39,13 @@ public class Welcome_for_User extends AppCompatActivity {
         */
         FragmentArrayList_for_compony.add(tab1);
         FragmentArrayList_for_compony.add(tab2);
+        FragmentArrayList_for_compony.add(tab3);
 
 
         mTabLayout.addTab(mTabLayout.newTab().setText("Mobiles"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Laptops"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("Members"));
+
 
         adapter = new TabsAdapter(getSupportFragmentManager(), FragmentArrayList_for_compony);
 
@@ -59,6 +65,9 @@ public class Welcome_for_User extends AppCompatActivity {
                         break;
                     case 1:
                         new Mobiles();
+                        break;
+                    case 2:
+                        new Members();
                         break;
 
                 }
