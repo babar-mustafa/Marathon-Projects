@@ -129,7 +129,7 @@ public class ConversationActivity extends Activity {
 
 
         mStoarge = FirebaseStorage.getInstance().getReference();
-//        folderRef = mStoarge.child("chat_files");
+        folderRef = mStoarge.child("chat_files");
 
         //addGroupMembersFragment(R.id.member_fragment_container);
 
